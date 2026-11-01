@@ -25,11 +25,14 @@ describe('Produtos e inscrição', () => {
     cy.get('a[href="/products"]').click()
     cy.location('pathname').should('eq', '/products')
     cy.contains('h2', 'All Products').should('be.visible')
-    cy.get('#search_product').type('dress')
+    cy.get('#search_product').type('jeans')
     cy.get('#submit_search').click()
     cy.contains('h2', 'Searched Products').should('be.visible')
-    cy.get('.features_items .productinfo p').should('have.length.greaterThan', 0).each(($nome) => {
-      cy.wrap($nome).should('be.visible').invoke('text').should('match', /dress/i)
+    cy.contains('.productinfo p', 'Soft Stretch Jeans').should('be.visible')
+    cy.contains('.productinfo p', 'Regular Fit Straight Jeans').should('be.visible')
+    cy.contains('.productinfo p', 'Grunt Blue Slim Fit Jeans').should('be.visible')
+    cy.get('.features_items .productinfo p').should('have.length', 3).each(($nome) => {
+      cy.wrap($nome).should('be.visible').invoke('text').should('match', /jeans/i)
     })
   })
 
