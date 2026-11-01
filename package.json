@@ -1,0 +1,17 @@
+{
+  "name": "projeto-conclusao-automacao-web",
+  "version": "1.0.0",
+  "description": "Testes de conclusão de automação web com Cypress no Automation Exercise",
+  "scripts": {
+    "test": "cypress run --browser chrome",
+    "cy:open": "cypress open",
+    "test:usuarios": "cypress run --browser chrome --spec cypress/e2e/usuarios.cy.js",
+    "test:produtos": "cypress run --browser chrome --spec cypress/e2e/produtos.cy.js",
+    "test:pedidos": "cypress run --browser chrome --spec cypress/e2e/pedidos.cy.js"
+  },
+  "devDependencies": {
+    "cypress": "^16.2.1",
+    "cypress-mochawesome-reporter": "^5.0.0"
+  },
+  "private": true
+}
